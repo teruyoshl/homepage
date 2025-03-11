@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'my second blog page'
 pubDate: 2025-03-11
 description: 'this is my first article of new astro page'
@@ -8,7 +9,6 @@ image:
     alt: 'Astro logo'
 tags: ["astro", "blog"]
 ---
-# my second article
-date: 2025-03-11
+
 
 test text2

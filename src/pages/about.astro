@@ -1,49 +1,25 @@
 ---
-import Footer from '../components/Footer.astro';
-import Navigation from '../components/Navigation.astro';
-import '../styles/global.css';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "私について";
-const identity = {
-    name: "てるよし",
-    role: "学生",
-    location: "東京",
-    hobbies: ["プログラミング", "読書", "旅行"],
-};
-const skills = ["AviUtl","C++","LaTeX"];
+const skills = ["AviUtl", "C#", "LaTeX"];
 
-const skillColor = "navy";
+const skillColor = "red";
 const fontWeight = "bold";
 const textCase = "";
 ---
 
-<html lang="ja">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textCase}}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-	</head>
-	<body>
-    <Navigation />
-	  <h1>{pageTitle}</h1>
-    <p>これはAstroのチュートリアル用のページです。</p>
-    <p>my skills:</p>
-    <ul>
-      {skills.map((skill) => (<li class="skill">{skill}</li>))}
-    </ul>
-    <Footer />
-	</body>
-</html>
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+  <p>これはAstroのチュートリアル用のページです。</p>
+  <p>my skills:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+</BaseLayout>
